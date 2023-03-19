@@ -27,4 +27,16 @@ class BookingController extends Controller
             return redirect()->back()->with('Error', 'Something went wrong');
         }
     }
+
+    public function delete($id)
+    {
+
+        $Restaurant = Booking::find($id);
+
+        if ($Restaurant->delete()) {
+            return redirect(route("bookings.index"))->with('Success', 'Fund deleted');
+        } else {
+            return redirect(route("bookings.index"))->with('Success', 'Something went wrong');
+        }
+    }
 }

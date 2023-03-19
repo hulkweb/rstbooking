@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group my-3">
                     <label class="text-capitalize">close time </label>
-                    <input type="time" class="form-control" name="open_time"  value="{{$restaurant->open_time}}">
+                    <input type="time" class="form-control" name="close_time"  value="{{$restaurant->close_time}}">
 
                 </div>
                 <div class="form-group text-center">

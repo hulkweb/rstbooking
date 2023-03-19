@@ -11,6 +11,6 @@ class Booking extends Model
     protected $fillable = ['name', 'phone', 'seats', 'restaurant_id', 'slot'];
     public function restaurant()
     {
-        return $this->hasOne(Restaurant::class);
+        return $this->belongsTo(Restaurant::class);
     }
 }

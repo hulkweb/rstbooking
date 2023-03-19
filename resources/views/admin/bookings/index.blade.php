@@ -35,13 +35,13 @@
                                 <td>{{ $item->phone }}</td>
                                 <td>{{ $item->restaurant->name }}</td>
                                 <td>{{ $item->seats }}</td>
-                                <td>{{ $item->slot }}</td>
+                                <td>{{ date(" h:i A , d M Y", $item->slot) }}</td>
 
 
                                 <td>
                                     
                                     
-                                  <button class="btn btn-danger" onclick="delete({{ route('bookings.delete', $item->id) }})"></button>
+                                  <button class="btn btn-danger" onclick="deleteit('{{ route('bookings.delete', $item->id) }}')"> <i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
                         @endforeach
@@ -58,8 +58,8 @@
 
     </div>
     <script>
-        function delete(url) {
-            if (alert("Do you want to delete this record")) {
+        function deleteit(url) {
+            if (prompt("Do you want to delete this record","YES")) {
                 location.replace(url);
 
             }

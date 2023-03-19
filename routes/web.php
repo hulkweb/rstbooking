@@ -25,11 +25,12 @@ Route::prefix("admin")->middleware('auth')->group(function () {
 
     Route::get('bookings', [App\Http\Controllers\BookingController::class, 'index'])->name('bookings.index');
     Route::get('bookings/show/{id}', [App\Http\Controllers\BookingController::class, 'show'])->name('bookings.show');
-
+    Route::get('bookings/delete/{id}', [App\Http\Controllers\BookingController::class, 'delete'])->name('bookings.delete');
     Route::get('restaurants', [App\Http\Controllers\RestaurantController::class, 'index'])->name('restaurants.index');
     Route::post('restaurants', [App\Http\Controllers\RestaurantController::class, 'store'])->name('restaurants.store');
     Route::get('restaurants/show/{id}', [App\Http\Controllers\RestaurantController::class, 'show'])->name('restaurants.show');
     Route::get('restaurants/create', [App\Http\Controllers\RestaurantController::class, 'create'])->name('restaurants.create');
+    Route::post('restaurants/update/{id}', [App\Http\Controllers\RestaurantController::class, 'update'])->name('restaurants.update');
 
     Route::get('restaurants/edit/{id}', [App\Http\Controllers\RestaurantController::class, 'edit'])->name('restaurants.edit');
     Route::get('restaurants/delete/{id}', [App\Http\Controllers\RestaurantController::class, 'delete'])->name('restaurants.delete');
